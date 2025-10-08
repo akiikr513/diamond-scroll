@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { HDRLoader } from "three/examples/jsm/loaders/HDRLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 export default function RoughDiamondViewer() {
@@ -33,7 +33,7 @@ export default function RoughDiamondViewer() {
 
     let model = null;
 
-    new RGBELoader().load("royal_esplanade_1k.hdr", (texture) => {
+    new HDRLoader().load("royal_esplanade_1k.hdr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
       scene.background = texture;
