@@ -59,7 +59,7 @@ export default function Diamond({ scrollProgress, glowIntensity }) {
     // Diamond Model
     const loader = new GLTFLoader();
     let diamondMesh;
-    loader.load("/diamond.glb", (gltf) => {
+    loader.load("diamond.glb", (gltf) => {
       diamondMesh = gltf.scene;
       diamondMesh.scale.set(2, 2, 2);
       scene.add(diamondMesh);

@@ -162,7 +162,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
       if (weather === "Rain") {
         seasonConfig = {
           count: 3000,
-          texturePaths: ["/rain.png"],
+          texturePaths: ["rain.png"],
           particleSize: 1.5,
           fallSpeed: { min: 15, max: 25 },
           sway: { x: 0.1, z: 0.1 },
@@ -170,7 +170,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
       } else if (weather === "Snow") {
         seasonConfig = {
           count: 2000,
-          texturePaths: ["/snowflake.png"],
+          texturePaths: ["snowflake.png"],
           particleSize: 2.0,
           fallSpeed: { min: 0.5, max: 1.5 },
           sway: { x: 1.0, z: 1.0 },
@@ -182,7 +182,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
           // Spring
           seasonConfig = {
             count: 800,
-            texturePaths: ["/green_leaf.png", "/sakura.png"],
+            texturePaths: ["green_leaf.png", "sakura.png"],
             particleSize: 4.0,
             fallSpeed: { min: 1, max: 3 },
             sway: { x: 2.0, z: 2.0 },
@@ -191,7 +191,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
           // Summer
           seasonConfig = {
             count: 400,
-            texturePaths: ["/sparkle.png"],
+            texturePaths: ["sparkle.png"],
             particleSize: 1.5,
             fallSpeed: { min: 0.2, max: 0.8 },
             sway: { x: 3.0, z: 3.0 },
@@ -200,11 +200,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
           // Autumn
           seasonConfig = {
             count: 800,
-            texturePaths: [
-              "/orange_leaf.png",
-              "/red_leaf.png",
-              "/brown_leaf.png",
-            ],
+            texturePaths: ["orange_leaf.png", "red_leaf.png", "brown_leaf.png"],
             particleSize: 5.0,
             fallSpeed: { min: 3, max: 6 },
             sway: { x: 4.0, z: 4.0 },
@@ -232,7 +228,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
       ) {
         const windGustConfig = {
           count: 300,
-          texturePaths: ["/brown_leaf.png", "/green_leaf.png"],
+          texturePaths: ["brown_leaf.png", "green_leaf.png"],
           particleSize: 3.0,
           fallSpeed: { min: 10, max: 20 }, // This will be horizontal speed
           sway: { x: 15.0, z: 5.0 }, // Strong horizontal movement

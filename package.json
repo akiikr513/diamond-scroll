@@ -1,11 +1,15 @@
 {
   "name": "diamond-scroll",
   "private": true,
+  "homepage": "https://akiikr513.github.io/diamond-scroll",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "bd": "npm run deploy",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -22,6 +26,7 @@
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "gh-pages": "^6.1.1",
     "globals": "^16.4.0",
     "vite": "^7.1.7"
   }

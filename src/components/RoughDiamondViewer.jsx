@@ -33,7 +33,7 @@ export default function RoughDiamondViewer() {
 
     let model = null;
 
-    new RGBELoader().load("/royal_esplanade_1k.hdr", (texture) => {
+    new RGBELoader().load("royal_esplanade_1k.hdr", (texture) => {
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.environment = texture;
       scene.background = texture;
@@ -41,7 +41,7 @@ export default function RoughDiamondViewer() {
     });
 
     const loader = new GLTFLoader();
-    loader.load("/rough_diamond.glb", (gltf) => {
+    loader.load("rough_diamond.glb", (gltf) => {
       model = gltf.scene;
       model.scale.set(2, 2, 2);
       model.traverse((child) => {
