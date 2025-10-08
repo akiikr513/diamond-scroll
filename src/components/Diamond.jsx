@@ -5,6 +5,8 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 export default function Diamond({ scrollProgress, glowIntensity }) {
   const mountRef = useRef(null);
+  const scrollRef = useRef(scrollProgress);
+  const glowRef = useRef(glowIntensity);
 
   useEffect(() => {
     const currentMount = mountRef.current;
@@ -86,12 +88,12 @@ export default function Diamond({ scrollProgress, glowIntensity }) {
 
       if (diamondMesh) {
         // Rotate the diamond based on scroll progress for a dynamic feel
-        diamondMesh.rotation.y = scrollProgress * Math.PI * 2;
+        diamondMesh.rotation.y = scrollRef.current * Math.PI * 2;
       }
 
       // Update glow based on the prop from App.jsx
-      pointLight.intensity = glowIntensity * 5; // Make the light intense
-      glowMesh.material.opacity = glowIntensity * 0.5; // Make the halo visible
+      pointLight.intensity = glowRef.current * 5; // Make the light intense
+      glowMesh.material.opacity = glowRef.current * 0.5; // Make the halo visible
 
       controls.update();
       renderer.render(scene, camera);
@@ -115,7 +117,13 @@ export default function Diamond({ scrollProgress, glowIntensity }) {
         currentMount.removeChild(renderer.domElement);
       }
     };
-  }, [scrollProgress, glowIntensity]); // Re-run effect if these props change
+  }, []); // Only run this effect once on mount
+
+  // Keep refs updated without re-triggering the effect
+  useEffect(() => {
+    scrollRef.current = scrollProgress;
+    glowRef.current = glowIntensity;
+  }, [scrollProgress, glowIntensity]);
 
   return <div ref={mountRef} style={{ width: "100%", height: "100%" }} />;
 }

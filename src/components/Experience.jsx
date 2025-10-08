@@ -161,7 +161,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
       let seasonConfig;
       if (weather === "Rain") {
         seasonConfig = {
-          count: 3000,
+          count: 1500,
           texturePaths: ["rain.png"],
           particleSize: 1.5,
           fallSpeed: { min: 15, max: 25 },
@@ -169,7 +169,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
         };
       } else if (weather === "Snow") {
         seasonConfig = {
-          count: 2000,
+          count: 1000,
           texturePaths: ["snowflake.png"],
           particleSize: 2.0,
           fallSpeed: { min: 0.5, max: 1.5 },
@@ -181,7 +181,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
         if (month >= 2 && month <= 4) {
           // Spring
           seasonConfig = {
-            count: 800,
+            count: 400,
             texturePaths: ["green_leaf.png", "sakura.png"],
             particleSize: 4.0,
             fallSpeed: { min: 1, max: 3 },
@@ -190,7 +190,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
         } else if (month >= 5 && month <= 7) {
           // Summer
           seasonConfig = {
-            count: 400,
+            count: 200,
             texturePaths: ["sparkle.png"],
             particleSize: 1.5,
             fallSpeed: { min: 0.2, max: 0.8 },
@@ -199,7 +199,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
         } else if (month >= 8 && month <= 10) {
           // Autumn
           seasonConfig = {
-            count: 800,
+            count: 400,
             texturePaths: ["orange_leaf.png", "red_leaf.png", "brown_leaf.png"],
             particleSize: 5.0,
             fallSpeed: { min: 3, max: 6 },
@@ -227,7 +227,7 @@ export default function Experience({ scrollProgress, weather, windspeed }) {
         weather !== "Snow"
       ) {
         const windGustConfig = {
-          count: 300,
+          count: 150,
           texturePaths: ["brown_leaf.png", "green_leaf.png"],
           particleSize: 3.0,
           fallSpeed: { min: 10, max: 20 }, // This will be horizontal speed
